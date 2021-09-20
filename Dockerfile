@@ -16,6 +16,6 @@ RUN npm install -g http-server
 
 ADD . /usr/apps/my_docker_test/
 
-ADD ../public/index.html /usr/apps/my_docker_test/index.html
+ADD ./public/index.html /usr/apps/my_docker_test/index.html
 
 CMD ["http-server", "-s"]
