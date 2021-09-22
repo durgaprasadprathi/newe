@@ -20,4 +20,4 @@ ADD .* /usr/apps/hello-docker/
 
 ADD ./public/index.html /usr/apps/docker/index.html
 
-CMD ["http-server", "-s"]
+CMD ["http-server", "-3000"]
