@@ -14,6 +14,10 @@ RUN apt-get install -y npm
 
 RUN npm install -g http-server
 
+RUN npm install
+
+RUN npm run build
+
 ADD public /usr/apps/docker/public
 
 ADD src /usr/apps/docker/src
