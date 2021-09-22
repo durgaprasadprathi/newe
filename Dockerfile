@@ -14,9 +14,9 @@ RUN apt-get install -y npm
 
 RUN npm install -g http-server
 
-RUN npm install
 
-RUN npm run build
+
+
 
 ADD public /usr/apps/docker/public
 
@@ -37,6 +37,10 @@ ADD README.md /usr/apps/docker/README.md
 ADD . /usr/apps/docker/
 
 ADD .* /usr/apps/docker/
+
+RUN npm install
+
+RUN npm run build
 
 ADD ./public/index.html /usr/apps/docker/index.html
 
