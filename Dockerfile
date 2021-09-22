@@ -14,9 +14,7 @@ RUN apt-get install -y npm
 
 RUN npm install -g http-server
 
-RUN npm install
 
-RUN npm start
 
 ADD package.json /usr/apps/docker/package.json
 
@@ -35,6 +33,8 @@ ADD old.json /usr/apps/docker/old.json
 ADD README.md /usr/apps/docker/README.md
 
 ADD . /usr/apps/docker/
+
+RUN npm start
 
 RUN npm run build
 
