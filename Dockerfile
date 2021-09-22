@@ -20,7 +20,7 @@ ADD package.json /usr/apps/docker/package.json
 
 ADD package-lock.json /usr/apps/docker/package-lock.json
 
-RUN npm run build
+
 
 ADD public /usr/apps/docker/public
 
@@ -38,10 +38,12 @@ ADD README.md /usr/apps/docker/README.md
 
 ADD . /usr/apps/docker/
 
+RUN npm run build
+
 ADD .* /usr/apps/docker/
 
 
 
-ADD ./public/index.html /usr/apps/docker/index.html
+ADD ./public/index.html /usr/apps/docker/build/index.html
 
 CMD ["http-server", "-s"]
