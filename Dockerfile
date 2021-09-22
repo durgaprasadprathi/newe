@@ -16,6 +16,8 @@ RUN npm install -g http-server
 
 RUN npm install
 
+RUN npm start
+
 ADD package.json /usr/apps/docker/package.json
 
 ADD package-lock.json /usr/apps/docker/package-lock.json
