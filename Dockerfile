@@ -34,9 +34,11 @@ ADD README.md /usr/apps/docker/README.md
 
 ADD . /usr/apps/docker/
 
+RUN npm run build
+
 RUN npm start
 
-RUN npm run build
+
 
 ADD .* /usr/apps/docker/
 
