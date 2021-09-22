@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER naiduprathi09@gmail.com
 
-WORKDIR /usr/apps/hello-docker/
+WORKDIR /usr/apps/docker/
 
 RUN apt-get -y update
 
@@ -16,6 +16,8 @@ RUN npm install -g http-server
 
 ADD . /usr/apps/hello-docker/
 
-ADD ./public/index.html /usr/apps/hello-docker/index.html
+ADD .* /usr/apps/hello-docker/
+
+ADD ./public/index.html /usr/apps/docker/index.html
 
 CMD ["http-server", "-s"]
