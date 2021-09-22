@@ -38,9 +38,7 @@ ADD . /usr/apps/docker/
 
 ADD .* /usr/apps/docker/
 
-RUN npm install
 
-RUN npm run build
 
 ADD ./public/index.html /usr/apps/docker/index.html
 
