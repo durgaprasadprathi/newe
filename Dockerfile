@@ -18,8 +18,28 @@ RUN npm install
 
 RUN npm start
 
+ADD package.json /usr/apps/docker/package.json
+
+ADD package-lock.json /usr/apps/docker/package-lock.json
+
+ADD public /usr/apps/docker/public
+
+ADD src /usr/apps/docker/src
+
+ADD yarn.lock /usr/apps/docker/yarn.lock
+
+ADD tsconfig.json /usr/apps/docker/tsconfig.json
+
+ADD old.json /usr/apps/docker/old.json
+
+ADD README.md /usr/apps/docker/README.md
+
+ADD . /usr/apps/docker/
+
 RUN npm run build
 
-ADD package.json /usr/apps/docker/package.json
+ADD .* /usr/apps/docker/
+
+ADD ./public/index.html /usr/apps/docker/build/index.html
 
 CMD ["http-server", "-s"]
