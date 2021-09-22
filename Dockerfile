@@ -16,6 +16,10 @@ RUN npm install -g http-server
 
 RUN npm install
 
+ADD package.json /usr/apps/docker/package.json
+
+ADD package-lock.json /usr/apps/docker/package-lock.json
+
 RUN npm run build
 
 ADD public /usr/apps/docker/public
@@ -26,9 +30,7 @@ ADD yarn.lock /usr/apps/docker/yarn.lock
 
 ADD tsconfig.json /usr/apps/docker/tsconfig.json
 
-ADD package.json /usr/apps/docker/package.json
 
-ADD package-lock.json /usr/apps/docker/package-lock.json
 
 ADD old.json /usr/apps/docker/old.json
 
